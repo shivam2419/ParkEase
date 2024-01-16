@@ -1,0 +1,156 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background: rgb(219, 214, 214);
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    background-image: url('background.jpg');
+}
+
+.header nav{
+    display: flex;
+    justify-content: space-around;
+}
+.header nav .left, .header nav .right ul{
+    display: flex;
+    justify-content: space-around;
+}
+.header nav .left h1{
+    color: white;
+}
+.header nav .left img{
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+.header nav .right ul li{
+    margin-left: 40px;
+    list-style: none;
+    padding: 5px;
+}
+.header nav .right ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+.header nav .right ul li a:hover{
+    border: none;
+    border-bottom: 2px solid #f39c12;
+
+}
+
+
+
+
+/* Form Section */
+.container .form{
+    text-align: center;
+    margin-top: 10%;
+}
+.container .form form{
+    width: 50%;
+    margin: auto;
+    background-color: white;
+}
+.container .form form h1{
+    background-color: black;
+    color: white;
+    margin-bottom: 5%;
+}
+.container .form form input{
+    width: 80%;
+    font-size: 14px;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 1px solid gray;
+    background-color: rgb(249, 249, 249);
+}
+#submit_button{
+    background-color: #f39c12;
+    margin: 5%;
+}
+.register{
+    margin: 40px 0px;
+    color: orange;
+}
+.register1{
+    margin: 40px 0px;
+    color: white;
+}
+.register1::after{
+    content: "";
+    width: 30%;
+    height: 4px;
+    background: #f39c12;
+    position: absolute;
+    top: 90px;
+    right: 35%; 
+}
+
+
+/* Table Part */
+th{
+    color: white;
+}
+td{
+    color: white;
+}
+
+
+/* Media Query */
+@media only screen and (max-width: 600px) {
+    .header nav{
+        display: block;
+    }
+    .header nav .left {
+        width: 50%;
+        margin-left: 5%;
+    }
+    .header nav .left h1{
+        font-size: 30px;
+    }
+    .header nav .left img{
+        margin-right: 10px;
+        margin-top: -10px;
+    }
+    .header nav .right ul{
+        display: none;
+    }
+    .container .form form{
+        width: 90%;
+    }
+    .container .form form h1{
+        font-size: 24px;
+    }
+    .container .form form input{
+        font-size: 10px;
+    }
+    .row{
+        font-size: 20px;
+    }
+    th{
+        font-size: 14px;
+    }
+    td{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 400px) {
+    th{
+        font-size: 12px;
+    }
+    td{
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .middle{
+        display: none;
+    }
+}

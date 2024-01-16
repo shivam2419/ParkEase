@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+/* Navbar */
+.container nav{
+    display: flex;
+    justify-content: space-between;
+}
+.container nav .left{
+    display: flex;
+    justify-content: space-around;
+}
+.container nav .left{
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container nav .left img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+    margin: 20px;
+}
+/* Middle Portion */
+.container .middle{
+    display: flex;
+    justify-content: space-around;
+    margin: 3%;
+}
+.container .middle .left .form form{
+    box-shadow: 1px 1px 10px 1px gray;
+    padding: 20px;
+    padding-top: 5px;
+    text-align: center;
+    border-radius: 10px;
+}
+.container .middle .left .form form h2{
+    font-size: 35px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.container .middle .left .form form input{
+    font-size: 20px;
+    width: 400px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-top: 25px;
+    padding: 5px;
+}
+#file_input{
+    border: none;
+}
+#submit_btn{
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 80%;
+    background-color: rgb(9, 230, 9);
+}
+.container .middle .right img{
+    height: 500px;
+    width: 500px;
+    margin-top: 20px;
+}
+
+
+/* Media Query */
+@media only screen and (max-width: 600px) {
+    .container .middle{
+        display: block;
+    }
+    .container .middle .left .form form input{
+        font-size: 12px;
+        width: 90%;
+    }
+    #submit_btn{
+        font-size: 14px;
+    }
+    .container .middle .right img{  
+        display: none;
+    }
+
+  }

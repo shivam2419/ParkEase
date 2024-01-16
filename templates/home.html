@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Parking</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <nav>
+            <div class="left">
+                <img src="../static/Rough/logo.jpg" alt="">
+                <h1>ParkEase</h1>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="home" class="link1">Home</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="search">Search Slot</a></li>
+                    <li><a href="service">Service</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="form">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <h1>BooK SLot</h1>
+                <input type="text" placeholder="Enter Name" name="owner_name">
+                <br>
+                <input type="number" placeholder="Enter Phone Number" name="Phone_number">
+                <br>
+                <input type="text" placeholder="Enter Vehicle Number" name="vehicle_number">
+                <br>
+                <input type="number" placeholder="Enter Parking Slot Id" name="parking_slot_id">
+                <br>
+                <input type="submit" value="Book Slot" id="submit_button">
+                <br>
+            </form>
+        </div>
+    </div>
+
+    </div>
+    <section>
+        <div class="middle">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="register1">Recent Records</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Search</span>
+                        </div>
+                        <input type="text" class="form-control" onkeyup="search()" id="text"
+                            placeholder="Search Vehicle Details">
+                    </div>
+                    <br>
+                    <table class="table table-striped" id="table">
+
+                        <thead>
+                            <tr>
+                                <th>Owner Name</th>
+                                <th>Phone Number</th>
+                                <th>Vehicle Number</th>
+                                <th>Area Id</th>
+                            </tr>
+                            {% for data in data %}
+                            <tr>
+                                <td>{{data.owner_name}}</td>
+                                <td>{{data.pnum}}</td>
+                                <td>{{data.vehicle_number}}</td>
+                                <td>{{data.parking_id}}</td>
+                            </tr>
+                            {% endfor %}
+                        </thead>
+
+
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const search = () => {
+            var input_value = document.getElementById("text").value.toUpperCase();
+            var table = document.getElementById("table");
+            var tr = table.getElementsByTagName("tr");
+            for (var i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    var text_value = td.textContent;
+                    if (text_value.toUpperCase().indexOf(input_value) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }   
+    </script>
+</body>
+
+</html>

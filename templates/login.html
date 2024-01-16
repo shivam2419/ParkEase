@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/login.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="left">
+                <img src="../static/Rough/logo.jpg" alt="">
+                <h1>ParkEase</h1>
+            </div>
+        </nav>
+        <div class="middle">
+            <div class="left">
+                <img src="../static/login_image.gif" alt="">
+            </div>
+            <div class="right">
+                <div class="form">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <span class="top">
+                            <h2>Login</h2>
+                            <!-- <label for=""><img src="../static/login_car.jpg" alt=""></label> -->
+                        </span>
+                        <input type="text" placeholder="Your name" name="userName">
+                        <br>
+                        <input type="password" placeholder="Your Password" name="passwrod">
+                        <br>
+                        <input type="text" placeholder="Your Id" name="id">
+                        <br>
+                        <br>
+                        <input type="submit" value="SignUp" id="submit_btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script>
+        function check_success(){
+            window.alert("Successfully SignedUp");
+        }
+    </script> -->
+</body>
+</html>

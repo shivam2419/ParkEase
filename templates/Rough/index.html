@@ -1,0 +1,153 @@
+ 
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Parking</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    
+    <div class="header">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-center" id="header" style="display: flex; gap: 22em;">
+                    <div style="margin-top: 5px;"> <li> <img src="../static/logo.jpg" style="height: 100px; width: 100px; border-radius: 17px; "></li></div>
+               
+               <div> <h1> Street Parking Management System</h1>
+                 
+                <ul style="display: flex; align-items: center;
+                gap: 40em;">
+
+                
+                 
+                 <div  id="header"  class="row" style="margin-top: 5px;">               
+                             <li><a href="index">Home</a></li>
+                             <li><a href="record">All Records</a></li>
+                           {% comment %} <li><a href="admin_page">Make Parking Admin</a></li> {% endcomment %}
+                          <li><a href="searching">Search</a></li></a></li>
+                        <li><a href="login">Logout</a></li></div>
+                </ul>
+             </div></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center mb-3">
+                    <h2 class="register">Registration Form</h2>
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="owner">Owner Name:</span>
+                        </div>
+                        <input type="text" name="owner_name" class="form-control">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> Parking address:</span>
+                        </div>
+                        <input type="text" name="Parking_address" class="form-control">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> phone Number:</span>
+                        </div>
+                        <input type="text" name="Phone_number" class="form-control">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> Date:</span>
+                        </div>
+                        <input type="date" name="entry_date" class="form-control">
+                    </div>
+                    
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> Number of Slots:</span>
+                        </div>
+                        <input type="number" name="total_slots" class="form-control">
+                    </div>
+                   <input type="submit" class="btn btn-primary my-3">
+<!--                         <button type="submit" class="btn btn-primary my-3">Send</button> -->
+                   </form>
+                </div>
+            
+            </div>
+        </div> 
+             
+    </div>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="register1">Recent Records</h2>
+                </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                   <div class="input-group">
+                       <div class="input-group-prepend">
+                           <span class="input-group-text" >Search</span>
+                       </div>
+                        <input type="text" class="form-control" onkeyup="search()" id="text" placeholder="Search Vehicle Details">
+                   </div>
+                   
+                <table class="table table-striped" id="table" >
+                    
+                            <thead>
+                        <tr>
+                            <th>Owner Name</th>
+                            <th>Parking Address</th>
+                            <th>Phone Number</th>
+                            <th>Entry Date</th>
+                            <th>Slots Number</th>
+                        </tr>
+                            {% for data in data %}
+                            <tr>
+                            <td>{{data.owner_name}}</td>
+                            <td>{{data.parking_address}}</td>
+                            <td>{{data.pnum}}</td>
+                            <td>{{data.slot_date}}</td>
+                            <td>{{data.slots}}</td>
+                            </tr>
+                            {% endfor %}
+                    </thead>
+                   
+                   
+                    
+                </table> 
+                        
+               </div>
+            </div>
+        </div>
+    </section>
+    <script>    
+        const search = () =>{
+            var input_value = document.getElementById("text").value.toUpperCase();
+            var table = document.getElementById("table");
+            var tr = table.getElementsByTagName("tr");
+            for(var i =0; i<tr.length; i++){
+               td = tr[i].getElementsByTagName("td")[0];
+               if(td){
+                 var text_value = td.textContent;
+                 if(text_value.toUpperCase().indexOf(input_value)>-1){
+                    tr[i].style.display = "";
+                 }else{
+                    tr[i].style.display= "none";
+                 }
+               }
+            }
+        }   
+    </script>
+</body>
+</html>
+
+ 

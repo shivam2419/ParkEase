@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="../static/signup.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="left">
+                <img src="../static/Rough/logo.jpg" alt="">
+                <h1>ParkEase</h1>
+            </div>
+        </nav>
+        <div class="middle">
+            <div class="left">
+                <div class="form">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <h2>SignUp</h2>
+                        <input type="text" placeholder="Name" name="userName">
+                        <br>
+                        <input type="password" placeholder="Password" name="password">
+                        <br>
+                        <input type="password" placeholder="Confirm Password" name="confirm_password">
+                        <br>
+                        <input type="email" placeholder="Email" name="emailid">
+                        <br>
+                        <input type="number" placeholder="Phone Number" name="phone_number">
+                        <br>
+                        <input type="file" id="file_input">
+                        <br>
+                        <input type="submit" value="SignUp" id="submit_btn" onclick="check_success()">
+                    </form>
+                </div>
+            </div>
+            <div class="right">
+                <img src="../static/signup_image.gif" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+        function check_success(){
+            window.alert("Successfully SignedUp");
+        }
+    </script>
+</body>
+
+</html>

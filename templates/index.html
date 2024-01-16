@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="left">
+                <img src="../static/Rough/logo.jpg" alt="">
+                <h2>ParkEase</h2>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="index" class="link1">Home</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="service">Service</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="middle">
+            <div class="left">
+                <h1>This is 
+                    <span class="flex">
+                        <span class="header-sub-title" id="word"></span><span class="header-sub-title blink">|</span>
+                    </span>
+                    Making Parking System more easier<br>&<br>Sustainable</h1>
+
+                <button id="btn_login"><a href="login">Login</a></button>
+                <button id="btn_signup"><a href="signup">SignUp</a></button>
+            </div>
+            <div class="right">
+                <img src="../static/index_image.gif" alt="">
+            </div>
+        </div>
+
+    </div>
+    <script>
+        const words = ["ParkEase"];
+        let i = 0;
+        let timer;
+        
+        function typingEffect() {
+            let word = words[i].split("");
+            var loopTyping = function() {
+                if (word.length > 0) {
+                    document.getElementById('word').innerHTML += word.shift();
+                } else {
+                    deletingEffect();
+                    return false;
+                };
+                timer = setTimeout(loopTyping, 200);
+            };
+            loopTyping();
+        };
+        
+        function deletingEffect() {
+            let word = words[i].split("");
+            var loopDeleting = function() {
+                if (word.length > 0) {
+                    word.pop();
+                    document.getElementById('word').innerHTML = word.join("");
+                } else {
+                    if (words.length > (i + 1)) {
+                        i++;
+                    } else {
+                        i = 0;
+                    };
+                    typingEffect();
+                    return false;
+                };
+                timer = setTimeout(loopDeleting, 100);
+            };
+            loopDeleting();
+        };
+        
+        typingEffect();
+    </script>
+</body>
+
+</html>

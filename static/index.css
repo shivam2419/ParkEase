@@ -1,0 +1,99 @@
+body{
+    padding: 0;
+    margin: 0;
+    /* Optional */
+    color: black;
+}
+.container nav{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.blink {
+    animation: blink 0.5s infinite;
+  }
+  @keyframes blink{
+    to { opacity: .0; }
+  }
+  .flex {
+      display: flex;
+  }
+  .header-sub-title {
+    color: rgb(101, 1, 103);
+    font-family: "Courier";
+    font-size: 40px;
+  }
+
+.container nav .left, .container nav .right ul{
+    display: flex;
+    justify-content: space-between;
+}
+.container nav .left img{
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+    margin: 10px;
+}
+.container nav .right ul li{
+    margin-left: 40px;
+    list-style: none;
+    padding: 5px;
+}
+.container nav .right ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    font-size: 18px;
+}
+.container nav .right ul li a:hover{
+    border: none;
+    border-bottom: 3px solid rgb(101, 1, 103);
+}
+
+/* Middle Section */
+.container .middle{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10%;
+}
+.container .middle .left b{
+    font-size: 45px;
+    color: purple;
+}
+.container .middle .left button a{
+    text-decoration: none;
+    color: white;
+}
+#btn_login,#btn_signup{
+    background-color: rgb(12, 226, 12);
+    font-size: 20px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    width: 120px;
+}
+.container .middle .right img{
+    width: 400px;
+    height: 400px;
+    margin-top: -20px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+/* Media Query */
+@media only screen and (max-width: 600px) {
+    body{
+        padding: 10px;
+    }
+    .container nav .left{
+        margin-left: 40px;
+    }
+    .container .middle{
+        display: block;
+    }
+    .container .middle .right img{
+        display: none;
+    }
+
+}
