@@ -19,7 +19,8 @@
     <div class="header">
         <nav>
             <div class="left">
-                <img src="../static/Rough/logo.jpg" alt="">
+                <span style="font-size:25px;cursor:pointer" onclick="openNav()">&#9776;</span>
+                <img src="../static/logo.png" alt="">
                 <h1>ParkEase</h1>
             </div>
             <div class="right">
@@ -32,14 +33,21 @@
             </div>
         </nav>
     </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index">Home</a>
+        <a href="about">About</a>
+        <a href="service">Services</a>
+        <a href="search" id="search_slot">Search Slot</a>
+      </div>
     <div class="container">
         <div class="form">
             <form action="" method="POST">
                 {% csrf_token %}
                 <h1>BooK SLot</h1>
-                <input type="text" placeholder="Enter Name" name="owner_name">
+                <input type="text" placeholder="Enter Name" name="owner_name" value={{username}}>
                 <br>
-                <input type="number" placeholder="Enter Phone Number" name="Phone_number">
+                <input type="number" placeholder="Enter Phone Number" name="Phone_number" value={{pnum}}>
                 <br>
                 <input type="text" placeholder="Enter Vehicle Number" name="vehicle_number">
                 <br>
@@ -96,6 +104,15 @@
             </div>
         </div>
     </section>
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
     <script>
         const search = () => {
             var input_value = document.getElementById("text").value.toUpperCase();

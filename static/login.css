@@ -1,6 +1,9 @@
 body{
     margin: 0;
     padding: 0;
+    background-image: url('login_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 /* Navbar */
 .container nav{
@@ -19,7 +22,7 @@ body{
     height: 60px;
     width: 60px;
     border-radius: 50px;
-    margin: 20px;
+    margin: 25px;
 }
 /* Middle Portion */
 .container .middle{

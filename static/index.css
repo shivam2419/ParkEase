@@ -25,31 +25,6 @@ body{
     font-size: 40px;
   }
 
-.container nav .left, .container nav .right ul{
-    display: flex;
-    justify-content: space-between;
-}
-.container nav .left img{
-    height: 50px;
-    width: 50px;
-    border-radius: 30px;
-    margin: 10px;
-}
-.container nav .right ul li{
-    margin-left: 40px;
-    list-style: none;
-    padding: 5px;
-}
-.container nav .right ul li a{
-    text-decoration: none;
-    color: black;
-    padding: 5px;
-    font-size: 18px;
-}
-.container nav .right ul li a:hover{
-    border: none;
-    border-bottom: 3px solid rgb(101, 1, 103);
-}
 
 /* Middle Section */
 .container .middle{
@@ -66,13 +41,19 @@ body{
     color: white;
 }
 #btn_login,#btn_signup{
-    background-color: rgb(12, 226, 12);
+    background-color: rgb(166, 0, 163);
     font-size: 20px;
     padding: 5px;
     border: none;
-    border-radius: 10px;
-    width: 120px;
+    width: 50%;
+    cursor: pointer;
 }
+#loggedin{
+    font-weight: lighter;
+    font-size: 0.8rem;
+    margin: 5%;
+}
+
 .container .middle .right img{
     width: 400px;
     height: 400px;
@@ -85,9 +66,6 @@ body{
 @media only screen and (max-width: 600px) {
     body{
         padding: 10px;
-    }
-    .container nav .left{
-        margin-left: 40px;
     }
     .container .middle{
         display: block;

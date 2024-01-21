@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParekEase | {% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="../static/base.css">
+    {% block css %}{% endblock css %}
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="left">
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+                <img src="../static/logo.png" alt="">
+                <h4>ParkEase</h4>
+            </div>
+            <div class="right">
+              <a href="index">Home</a>
+              <a href="about">About</a>
+              <a href="service">Service</a>
+            </div>
+        </nav>
+        
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index">Home</a>
+            <a href="about">About</a>
+            <a href="service">Services</a>
+            <a href="#">Contact</a>
+          </div>
+        {% block body %}{% endblock body %}
+    </div>
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+</body>
+</html>

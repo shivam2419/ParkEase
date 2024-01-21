@@ -1,0 +1,128 @@
+body{
+    padding: 0;
+    margin: 0;
+    /* Optional */
+    color: black;
+    background-image: url('index_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container nav{
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    z-index: 100;
+}
+.container nav .left, .container nav .right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container nav .left span{
+    display: none;
+}
+.container nav .left img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 5px;
+}
+.container nav .left h4{
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container .right a{
+    position: relative;
+    font-size: 18px;
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+    /* font-family: 'Poppins','sans-serif; */
+}
+.container .right a::before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: 0.4s;
+    background-color: rgb(190, 0, 162) ;
+}
+.container .right a:hover::before{
+    width: 100%;
+}
+/* side nav */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+
+/* Media Query */
+@media only screen and (max-width: 600px) {
+    .container nav .left span{
+        display: block;
+        margin-top: -6px;
+        margin-left: 20px;
+    }
+    .container nav .left{
+        margin: 0;
+        padding: 0;
+        margin-left: -30%;
+    }
+    .container .left img{
+        height: 30px;
+        width: 30px;
+    }
+    .container nav .right{
+        display: none;
+    }
+  }
+
+@media only screen and (max-width: 340px) {
+    .container nav .left img{
+        height: 55px;
+        width: 55px;
+    }
+}

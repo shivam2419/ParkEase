@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}OTP{% endblock title %}
+    {% block css %}
+    <link rel="stylesheet" href="../static/otp_page.css">
+    {% endblock css %}
+</head>
+<body>
+    {% block body %}
+        <div class="middle">
+            <form action="signedup" method="POST">
+                {% csrf_token %}
+                <p>Enter the 4-digit OTP sent <br>to you at {{number}} </p>
+                <input type="number" placeholder="Enter OTP" style="margin: 0;" name="otp">
+                <br><br>
+                <input type="submit" value="Continue" 
+                id="submit_btn" style="margin: 0;">
+        </div>
+        <span id="otp_rough" style="display:none;">{{otp}}</span>
+
+        <script>
+            const otpPin = document.getElementById('otp_rough');
+            window.alert("Sharing OTP Here Because your numbe isn't linked with SMSAPI_WEB\n"+"Your OTP : "+otpPin.innerText);
+        </script>
+    {% endblock body %}
+</body>
+</html>
+
+<!-- Twilio recovery shivam@2419 - > YYTAHGCRCZXMWEUGR99HUV75 -->
+<!-- Twilio recovery gyanmantra ->  YYTAHGCRCZXMWEUGR99HUV75 -->

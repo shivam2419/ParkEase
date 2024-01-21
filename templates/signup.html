@@ -1,53 +1,64 @@
+{% extends "base.html" %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignUp</title>
+    <title>{% block title %}Signup{% endblock title %}</title>
+    {% block css %}
     <link rel="stylesheet" href="../static/signup.css">
+    {% endblock css %}
 </head>
 
 <body>
-    <div class="container">
-        <nav>
-            <div class="left">
-                <img src="../static/Rough/logo.jpg" alt="">
-                <h1>ParkEase</h1>
-            </div>
-        </nav>
-        <div class="middle">
-            <div class="left">
-                <div class="form">
-                    <form action="" method="POST">
-                        {% csrf_token %}
-                        <h2>SignUp</h2>
-                        <input type="text" placeholder="Name" name="userName">
-                        <br>
-                        <input type="password" placeholder="Password" name="password">
-                        <br>
-                        <input type="password" placeholder="Confirm Password" name="confirm_password">
-                        <br>
-                        <input type="email" placeholder="Email" name="emailid">
-                        <br>
-                        <input type="number" placeholder="Phone Number" name="phone_number">
-                        <br>
-                        <input type="file" id="file_input">
-                        <br>
-                        <input type="submit" value="SignUp" id="submit_btn" onclick="check_success()">
-                    </form>
-                </div>
-            </div>
-            <div class="right">
-                <img src="../static/signup_image.gif" alt="">
+    {% block body %}
+    <div class="middle">
+        <div class="form">
+            <form action="signup" method="POST">
+                {% csrf_token %}
+                <h2>Create Account</h2>
+                <label for="">Your name<span style="color: red;">*</span></label>
+                <br>
+                <input type="text" placeholder="First and last name" name="userName" required>
+                <br>
+                <label for="">Password<span style="color: red;">*</span></label>
+                <br>
+                <input type="password" placeholder="Atleast 6 characters" name="password" required>
+                <br>
+                <label for="">Re-enter password<span style="color: red;">*</span></label>
+                <br>
+                <input type="password" placeholder="Re-enter password" name="confirm_password" required>
+                <br>
+                <label for="">Email (optional)</label>
+                <br>
+                <input type="email" placeholder="Enter email" name="emailid">
+                <br>
+                <label for="">Phone number<span style="color: red;">*</span> </label>
+                <br>
+                <input type="hidden" value="{{number}}" name="phone_number">
+                <p>
+                    {{number}}
+                </p>
+                <br>
+                <input type="submit" value="SignUp" id="submit_btn" onclick="check_success()">
+            </form>
+
+            <div class="a-divider-inner">----------------------------------------------------</div>
+            <div class="down">
+                <p>Already have an account? <a href="login">Sign in *</a>
+                </p>
+                <p>
+                    By creating an account or logging in, you agree to ParEase's Conditions of Use and Privacy Policy.
+                </p>
             </div>
         </div>
     </div>
-    <script>
-        function check_success(){
-            window.alert("Successfully SignedUp");
-        }
-    </script>
+    {% endblock body %}
 </body>
 
 </html>
+
+
+<!-- Twilio recovery shivam@2419 - > YYTAHGCRCZXMWEUGR99HUV75 -->
+<!-- Twilio recovery gyanmantra ->  YYTAHGCRCZXMWEUGR99HUV75 -->

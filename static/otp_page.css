@@ -1,0 +1,34 @@
+body{
+    background-image: none;
+}
+.container nav{
+    background-color: rgb(118, 0, 104);
+    color: white;
+    padding: 0;
+}
+.container nav .right{
+    display: none;
+}
+.middle{
+    width: 100%;
+    text-align: center;
+    padding-top: 150px;
+}
+.middle p{
+    font-size: 26px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 0.5px;
+}
+.middle input, #submit_btn{
+    padding: 12px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 8px;
+    width: 300px;
+    margin: 2%;
+    border: none;
+    margin-top: 0;
+}
+#submit_btn{
+    background-color: rgb(118, 0, 104);
+    color: white;   
+}

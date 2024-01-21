@@ -20,6 +20,9 @@ body{
 .header nav .left h1{
     color: white;
 }
+.header nav .left span{
+    display: none;
+}
 .header nav .left img{
     height: 50px;
     width: 50px;
@@ -43,7 +46,49 @@ body{
 }
 
 
-
+/* side nav */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  #search_slot{
+    padding: 5px;
+    background-color: white ;
+    cursor: pointer;
+  }
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
 
 /* Form Section */
 .container .form{
@@ -117,6 +162,11 @@ td{
     .header nav .left img{
         margin-right: 10px;
         margin-top: -10px;
+    }
+    .header nav .left span{
+        display: block;
+        color: white;
+        margin: 0px 10px 0px 10px;
     }
     .header nav .right ul{
         display: none;

@@ -1,0 +1,59 @@
+body{
+    background-image: none;
+}
+.container nav{
+    background-color: rgb(118, 0, 104);
+    color: white;
+    padding: 0;
+}
+.container nav .right{
+    display: none;
+}
+.middle{
+    width: 100%;
+    text-align: center;
+    padding-top: 150px;
+}
+.middle p{
+    font-size: 26px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 0.5px;
+}
+.middle form input{
+    padding: 12px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 8px;
+    width: 300px;
+    margin: 1%;
+    border: none;
+    margin-top: 0;
+}
+#submit_btn{
+    background-color: rgb(118, 0, 104);
+    color: white;
+    margin-top: 5px;
+}
+.middle span{
+    width: 100%;
+    color: gray;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.social button{
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(234, 234, 234);
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+}
+.alert p{
+    font-size: 12px;
+    font-weight: lighter;
+    width: 200px;
+    margin: auto;
+    color: rgb(90, 90, 90);
+    margin-top: 1%;
+    text-align: left;
+
+}
