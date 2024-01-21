@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Register(models.Model):
+class carRegister(models.Model):
     owner_name=models.CharField(max_length=200)
     vehicle_number=models.CharField(max_length=200)
     pnum=models.IntegerField()
@@ -15,4 +15,7 @@ class signUp(models.Model):
     pswrd=models.IntegerField()
     user_email=models.CharField(max_length=200)
     phone_num=models.IntegerField()
-    adhaar_image=models.ImageField(upload_to='activity/images',default="")
+
+class testid(models.Model):
+    id = models.AutoField(primary_key=True)
+    user_name=models.CharField(max_length=200)

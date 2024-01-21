@@ -24,6 +24,9 @@ urlpatterns = [
     path("admin_page", views.admin_page),
     path("search", views.search),
     path("login", views.login, name = "login"),
-    path("signup", views.signup, name = "signup"),
+    path("signup", views.signup, name = "Signup"),
+    path("get_otp_page", views.get_otp, name = "Otp_page"),
+    path("getotp", views.send_msg, name = "get_otp"),
+    path("signedup", views.signedup),
 
 ]
